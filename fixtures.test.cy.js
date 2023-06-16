@@ -22,10 +22,10 @@ describe('Working with inputs', () => {
             const password = user.password
 
             cy.get('#user_login').clear()
-            cy.get('#user_login').type(username)
+            cy.get('#user_login').type("usernam")
 
             cy.get('input[name="user_password"]').clear()
-            cy.get('input[name="user_password"]').type(password)
+            cy.get('input[name="user_password"]').type("password")
 
             cy.get('input[name="submit"]').click()
 
