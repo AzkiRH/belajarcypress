@@ -17,7 +17,7 @@ describe('Working with inputs', () => {
     })
 
     it('Should try to login', () => {
-        cy.fixture("user").then(user => {
+        cy.fixture('user.json').then(user => {
             const username = user.username
             const password = user.password
 
