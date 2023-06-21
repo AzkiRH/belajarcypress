@@ -12,6 +12,7 @@ describe('Working with inputs', () => {
             const password = user.password
             cy.visit('http://zero.webappsecurity.com/login.html')
             cy.login(username, password)
+        })
     
     it('Should display online banking content', () => {
             cy.contains('onlineBankingMenu').click()
@@ -25,8 +26,6 @@ describe('Working with inputs', () => {
             cy.url().should('include', 'bank/pay-bills.html')
             cy.get('h2').should('be.visible')
             cy.get('.row').should('be.visible')
-        })
-
         })
     })
 })
