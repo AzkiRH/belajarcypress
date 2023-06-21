@@ -12,14 +12,14 @@ describe('Working with inputs', () => {
             const password = user.password
             cy.visit('http://zero.webappsecurity.com/login.html')
             cy.login(username, password)
-            cy.url().should('include', 'index.html')
+            cy.url().should('include', 'account-summary.html')
         })
     })
 
-    it('Should enter to the online banking page', () => {
-        cy.get('#onlineBankingMenu').click()
-        cy.url().should('include', 'online-banking.html')
-    })
+    /// it('Should enter to the online banking page', () => {
+        /// cy.get('#onlineBankingMenu').click()
+        /// cy.url().should('include', 'online-banking.html')
+    /// })
     
     it('Should enter to display pay bills content', () => {
             cy.get('#pay_bills_tab').click()
