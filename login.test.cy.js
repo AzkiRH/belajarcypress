@@ -15,4 +15,13 @@ describe('Working with inputs', () => {
         cy.get('input[name="user_password"]').clear()
         cy.get('input[name="user_password"]').type('password')
     })
+
+    it('Should try to login', () => {
+        cy.fixture('user.json').then(user => {
+            const username = user.user
+            const password = user.password
+            cy.login(username, password)
+            cy.get('.alert-error').should('contain.text', 'Login and/or password are wrong.')
+        })
+    })
 })
